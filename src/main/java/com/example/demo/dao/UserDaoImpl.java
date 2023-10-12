@@ -23,8 +23,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     public User getUser(long id) {
-        User user = entityManager.find(User.class, id);
-        return user;
+        return entityManager.find(User.class, id);
     }
 
     public void save(User user) {

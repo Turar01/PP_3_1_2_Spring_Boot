@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @Controller
-@RequestMapping("/users")
+@RequestMapping("/")
 public class UserController {
 
 	private final UserService userService;
@@ -19,7 +19,7 @@ public class UserController {
 		this.userService = userService;
 	}
 
-	@GetMapping()
+	@GetMapping("/")
 	public String getAllUsers(Model model) {
 		model.addAttribute("users", userService.getAllUsers());
 		return "/users/index";
@@ -34,7 +34,7 @@ public class UserController {
 	@PostMapping()
 	public String create(@ModelAttribute("user") User user) {
 		userService.save(user);
-		return "redirect:/users";
+		return "redirect:/";
 	}
 
 	@GetMapping("/{id}/edit")
@@ -47,13 +47,13 @@ public class UserController {
 	public String update(@ModelAttribute("user") User user, @PathVariable("id") long id) {
 
 		userService.update(id, user);
-		return "redirect:/users";
+		return "redirect:/";
 	}
 
 	@DeleteMapping("/{id}")
 	public String delete(@PathVariable("id") long id) {
 		userService.delete(id);
-		return "redirect:/users";
+		return "redirect:/";
 
 	}
 }

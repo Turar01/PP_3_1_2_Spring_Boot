@@ -41,13 +41,13 @@
 </head>
 <body>
 <h1>Add User</h1>
-<form th:action="@{/users}" method="post" th:object="${user}">
+<form th:action="@{/}" method="post" th:object="${user}">
   <label for="name">Name:</label>
   <input type="text" id="name" name="name" th:field="*{name}" required/><br/>
   <label for="age">Age:</label>
   <input type="number" id="age" name="age" th:field="*{age}" required/><br/>
   <input type="submit" value="Add User"/>
 </form>
-<a class="back-link" th:href="@{/users}">Back to List</a>
+<a class="back-link" th:href="@{/}">Back to List</a>
 </body>
 </html>

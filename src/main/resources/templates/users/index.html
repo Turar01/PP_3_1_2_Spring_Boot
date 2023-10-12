@@ -46,14 +46,14 @@
     <td th:text="${user.name}">John Doe</td>
     <td th:text="${user.age}">30</td>
     <td class="actions">
-      <a th:href="@{/users/{id}/edit(id=${user.id})}">Edit</a>
-      <form th:action="@{/users/{id}(id=${user.id})}" method="post">
+      <a th:href="@{/{id}/edit(id=${user.id})}">Edit</a>
+      <form th:action="@{/{id}(id=${user.id})}" method="post">
         <input type="hidden" name="_method" value="delete"/>
         <input type="submit" value="Delete"/>
       </form>
     </td>
   </tr>
 </table>
-<a th:href="@{/users/new}">Add User</a>
+<a th:href="@{/new}">Add User</a>
 </body>
 </html>

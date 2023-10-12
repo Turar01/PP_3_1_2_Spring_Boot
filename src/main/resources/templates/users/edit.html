@@ -45,7 +45,7 @@
 </head>
 <body>
 <h1>Edit User</h1>
-<form th:action="@{/users/{id}(id=${user.id})}" method="post" th:object="${user}">
+<form th:action="@{/{id}(id=${user.id})}" method="post" th:object="${user}">
   <input type="hidden" name="_method" value="patch"/>
   <label for="name">Name:</label>
   <input type="text" id="name" name="name" th:field="*{name}" required/><br/>
@@ -53,6 +53,6 @@
   <input type="number" id="age" name="age" th:field="*{age}" required/><br/>
   <input type="submit" value="Update User"/>
 </form>
-<a class="back-link" th:href="@{/users}">Back to List</a>
+<a class="back-link" th:href="@{/}">Back to List</a>
 </body>
 </html>
